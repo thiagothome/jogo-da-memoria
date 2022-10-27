@@ -50,3 +50,14 @@ const validaInput = ({target})=>{
 
 loginInput.addEventListener("input", validaInput);
 
+/**
+ * pegar o formulario
+ * adicionar um evento no formulario (submit)
+ * adiconar uma variavel a funcao do evento
+ * prevenir o comportamento de envio de formulario dentro da função
+ * salvar o valor digitado no localStorage:
+    localStorage.setItem('player', input.value)
+ *redirecioinar o jogador para a pagina do jogo:
+    window.location = 'pages/game.html';
+ * 
+ */

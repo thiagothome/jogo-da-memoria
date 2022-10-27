@@ -20,3 +20,33 @@
 
 // input.addEventListener('input', validateInput);
 // form.addEventListener('submit', handleSubmit);
+
+/*
+pegar o botao
+pegar o input
+adicionar um evento para o input (input event)
+atribuir uma funcao do evento a uma variável
+ver se foi digitado uma palavra com mais de 3 letras
+USAR OBJECT DESTRUCTOR PARA PEAGR O TARGET:
+    CONST VARIAVEL = ({TARGET})=>{}
+caso atenda a condição, desabilitar o botao. se não
+habilita novamente:
+    removeAttibutte()
+    setAttribute(atributo, valor caso exista)
+*/
+
+const loginButton = document.querySelector(".login-button");
+const loginInput = document.querySelector(".login-input");
+
+// desabilita/habilita botão
+const validaInput = ({target})=>{
+    if(target.value.length > 2){
+        loginButton.removeAttribute("disabled");
+        return;
+    }
+    loginButton.setAttribute("disabled", "");
+
+}
+
+loginInput.addEventListener("input", validaInput);
+

@@ -61,3 +61,21 @@ loginInput.addEventListener("input", validaInput);
     window.location = 'pages/game.html';
  * 
  */
+
+
+    //pega o formulário pela classe .login-form
+    const form = document.querySelector(".login-form");
+
+    const redirecionaParaJogo = (event)=>{
+        //previne o padrao de submeter o formulario
+        event.preventDefault();
+
+        // armazena a chave player no localStorage
+        localStorage.setItem('player', loginInput.value);
+
+        // redireciona para a página game que está dentro da pasta pages
+        window.location = 'pages/game.html';
+    }
+
+    // adiciona um evento no formulário
+    form.addEventListener("submit", redirecionaParaJogo);

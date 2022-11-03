@@ -152,6 +152,18 @@ const grid = document.querySelector(".grid");
  * 
  */
 
+/**
+ * adicionar um event na criacao da carta, evento na carta
+ * criar a funcao do evento separado
+ * adicionar a classe reveal-card na carta 
+ * criar condicional para ver se a carta já está virada 
+ * criar variaveis fora da funcao para identificar primeira e segunda carta clicada
+ * condicional para ver se primeira e segunda carta foram clicadas
+ * usar o target.parentNode
+ * apos clicar na segunda carta, chamar função para checar se as cartas são iguais.
+ * na criação da carta criar um dataSet para a carta com o nome de cada personagem
+ */
+
 const characters = [
     "beth",
     "jerry",
@@ -196,4 +208,3 @@ const loadGame = ()=>{
     });
 }
 
-loadGame();

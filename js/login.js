@@ -79,3 +79,6 @@ loginInput.addEventListener("input", validaInput);
 
     // adiciona um evento no formulário
     form.addEventListener("submit", redirecionaParaJogo);
+
+
+    

@@ -70,3 +70,59 @@ header {
   filter: saturate(0);
   opacity: 0.5;
 } */
+
+.grid {
+  /* 
+  usar display grid */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  max-width: 800px;
+  margin: 100px auto;
+  gap: 15px;
+
+}
+
+.card {
+  /* 
+  aspect-ratio: 3/4;  serve para deixar a carta sempre nessa proporçao em qualquer tamanhao de tela
+  transition na card
+  transform_style
+  */
+  aspect-ratio: 3/4;
+  width: 100%;
+  border-radius: 5px;
+  transform-style: preserve-3d;
+  transition: all .4s ease-in;
+  position: relative;
+
+}
+
+.face {
+  border: solid 1px black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  
+}
+
+.front {
+  /* background-color: blueviolet; */
+  transform: rotateY(180deg);
+
+}
+
+.back {
+  /* 
+  backface-visibility: serve para esconder a parte de tras, mostrando assim a face que está embaixo
+  */
+  background-image: url(../images/back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  backface-visibility: hidden;
+  
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}

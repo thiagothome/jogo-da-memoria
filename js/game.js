@@ -140,6 +140,20 @@
 
 const grid = document.querySelector(".grid");
 
+/**
+ * criar um array guardando os nomes das imagens que vao no front da carta
+ * criar uma funcao para percorrer um array 
+ * adicionar cada carta criada ao grid
+ * passar cada personagem do front a funcao de criação de carta e nela adicionar o personagem a div front
+ * duplicar o array [...array_aqui, ...array_aqui] 
+ * forEach agora percorre array duplicado
+ * embaralhar as cartas com sort. Sort recebe uma funcao sort(()=> Math.random() - 0.5)
+ * forEach percorre array embaralhado
+ * 
+ */
+
+
+
 const createElement = (tag, classElement)=>{
     const element = document.createElement(tag);
     element.className = classElement;

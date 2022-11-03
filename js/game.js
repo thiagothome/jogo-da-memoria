@@ -126,3 +126,35 @@
 // }
 
 
+
+
+/**
+ * consttruir uma estrutura html com as respectivas classes 
+ * criar uma funcao para criar uma carta, com arrow function
+ * criar todas as divs grid, card, face, front, back
+ * variavel.classname = nome da classe
+ * colocar as tags dentro da pagina
+ * otimizar cirando uma segunda funcao recebendo parâmetro para criaçao de elemento ficando mais dinâmico. 
+ * 
+ */
+
+const grid = document.querySelector(".grid");
+
+const createElement = (tag, classElement)=>{
+    const element = document.createElement(tag);
+    element.className = classElement;
+    return element;
+}
+
+const createCard = ()=>{
+    const card = createElement("div", "card");
+    const front = createElement("div", "front face");
+    const back = createElement("div", "back face");
+
+    card.appendChild(front);
+    card.appendChild(back);
+
+    return card;
+
+}
+

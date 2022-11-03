@@ -178,7 +178,7 @@ const createCard = (character)=>{
 
     card.appendChild(front);
     card.appendChild(back);
-    front.style.backgroundImage = `url('../images/${character}.png')`;
+    front.style.backgroundImage = `url(../images/${character}.png)`;
 
 
     return card;
@@ -186,12 +186,10 @@ const createCard = (character)=>{
 }
 
 const loadGame = ()=>{
-
-
-
-    characters.forEach((character) => {
+    const duplicadedCharacters = [...characters, ...characters];
+    const shuffledArray = duplicadedCharacters.sort(()=>Math.random() - 0.5);
+    shuffledArray.forEach((character) => {
         const card = createCard(character);
-
         grid.appendChild(card);
 
 

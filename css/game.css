@@ -75,7 +75,7 @@ header {
   /* 
   usar display grid */
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   width: 100%;
   max-width: 800px;
   margin: 100px auto;

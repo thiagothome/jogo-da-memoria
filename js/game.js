@@ -152,6 +152,17 @@ const grid = document.querySelector(".grid");
  * 
  */
 
+const characters = [
+    "beth",
+    "jerry",
+    "jessica",
+    "meeseeks",
+    "pessoa-passaro",
+    "morty",
+    "pickle-rick",
+    "scroopy",
+    "rick"
+]
 
 
 const createElement = (tag, classElement)=>{
@@ -160,15 +171,31 @@ const createElement = (tag, classElement)=>{
     return element;
 }
 
-const createCard = ()=>{
+const createCard = (character)=>{
     const card = createElement("div", "card");
     const front = createElement("div", "front face");
     const back = createElement("div", "back face");
 
     card.appendChild(front);
     card.appendChild(back);
+    front.style.backgroundImage = `url('../images/${character}.png')`;
+
 
     return card;
 
 }
 
+const loadGame = ()=>{
+
+
+
+    characters.forEach((character) => {
+        const card = createCard(character);
+
+        grid.appendChild(card);
+
+
+    });
+}
+
+loadGame();

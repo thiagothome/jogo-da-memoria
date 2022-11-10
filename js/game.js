@@ -177,10 +177,38 @@ const characters = [
 ]
 
 
+
+
 const createElement = (tag, classElement)=>{
     const element = document.createElement(tag);
     element.className = classElement;
     return element;
+}
+
+let firstCard = "";
+let secondCard = "";
+
+const revealCard = ({target})=>{
+    if(target.parentNode.className.includes("reveal-card")){
+        return;
+    }
+
+    if(firstCard === ""){
+        target.parentNode.classList.add("reveal-card");
+        firstCard = target.parentNode;
+    }else if(secondCard === ""){
+        target.parentNode.classList.add("reveal-card");
+        secondCard = target.parentNode;
+    }
+
+    checkCards();
+    
+}
+
+const checkCards = ()=>{
+    /**
+     * 
+     */
 }
 
 const createCard = (character)=>{
@@ -188,23 +216,41 @@ const createCard = (character)=>{
     const front = createElement("div", "front face");
     const back = createElement("div", "back face");
 
-    card.appendChild(front);
-    card.appendChild(back);
+   
+
     front.style.backgroundImage = `url(../images/${character}.png)`;
 
+
+    card.appendChild(front);
+    card.appendChild(back);
+
+    card.addEventListener("click", revealCard)
+    card.setAttribute("data-character", character)
+    
 
     return card;
 
 }
 
+
+
 const loadGame = ()=>{
-    const duplicadedCharacters = [...characters, ...characters];
+
+    // duplicar o array [...array_aqui, ...array_aqui] 
+    const duplicadedCharacters = [...characters, ...characters]; 
+
+    // embaralhar as cartas com sort. Sort recebe uma funcao sort(()=> Math.random() - 0.5)
     const shuffledArray = duplicadedCharacters.sort(()=>Math.random() - 0.5);
     shuffledArray.forEach((character) => {
+        // * criar variaveis fora da funcao para identificar primeira e segunda carta clicada
         const card = createCard(character);
+
+
+    // adicionar cada carta criada ao grid
         grid.appendChild(card);
 
 
     });
 }
 
+loadGame();

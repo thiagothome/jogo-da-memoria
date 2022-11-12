@@ -139,7 +139,7 @@
  */
 
 const grid = document.querySelector(".grid");
-
+const spanPlayer = document.querySelector(".player");
 /**
  * criar um array guardando os nomes das imagens que vao no front da carta
  * criar uma funcao para percorrer um array 
@@ -170,6 +170,8 @@ const grid = document.querySelector(".grid");
  * verificar a quantidade de elementos com cartas desabilitadas
  * criar condicional para verificar quantas cartas foram salvas 
  */
+
+
 
 const characters = [
     "beth",
@@ -298,4 +300,11 @@ const loadGame = ()=>{
     });
 }
 
-loadGame();
+window.onload = ()=> {
+    //recuperar o valor do localStorage 
+    // localStorage.getItem("valor do input")
+    //colocar na tela 
+    spanPlayer.innerHTML = localStorage.getItem("player");
+    loadGame();
+    
+}

@@ -71,6 +71,30 @@ header {
   opacity: 0.5;
 } */
 
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 50px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(67, 250, 97, 0.479);
+  font-size: 1.2em;
+  width: 100%;
+  max-width: 800px;
+  padding: 30px;
+  margin: 0 0 30px;
+  border-radius: 5px;
+}
+
 .grid {
   /* 
   usar display grid */
@@ -78,7 +102,7 @@ header {
   grid-template-columns: repeat(6, 1fr);
   width: 100%;
   max-width: 800px;
-  margin: 100px auto;
+  margin: 0 auto;
   gap: 15px;
 
 }

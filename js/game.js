@@ -164,6 +164,13 @@ const grid = document.querySelector(".grid");
  * na criação da carta criar um dataSet para a carta com o nome de cada personagem
  */
 
+
+/**  checar o fim do jogo
+ * No checkCards apos acertar a dupla de cartas, chamr func para checar o fim do jogo
+ * verificar a quantidade de elementos com cartas desabilitadas
+ * criar condicional para verificar quantas cartas foram salvas 
+ */
+
 const characters = [
     "beth",
     "jerry",
@@ -176,40 +183,78 @@ const characters = [
     "rick"
 ]
 
-
-
-
 const createElement = (tag, classElement)=>{
     const element = document.createElement(tag);
     element.className = classElement;
     return element;
 }
 
+
+
 let firstCard = "";
 let secondCard = "";
 
-const revealCard = ({target})=>{
-    if(target.parentNode.className.includes("reveal-card")){
-        return;
+const checkEndGame = ()=>{
+    const disabledCardsArray = document.querySelectorAll(".disabled-card");    
+    console.log(disabledCardsArray.length)
+    if (disabledCardsArray.length === 18){
+        alert("Parabéns você venceu");
     }
-
-    if(firstCard === ""){
-        target.parentNode.classList.add("reveal-card");
-        firstCard = target.parentNode;
-    }else if(secondCard === ""){
-        target.parentNode.classList.add("reveal-card");
-        secondCard = target.parentNode;
-    }
-
-    checkCards();
-    
 }
 
 const checkCards = ()=>{
-    /**
-     * 
-     */
+    const firstCharacter = firstCard.getAttribute("data-character");
+    const secondCharacter = secondCard.getAttribute("data-character");
+    
+    if (firstCharacter === secondCharacter){
+        
+       firstCard.firstChild.classList.add("disabled-card");
+       secondCard.firstChild.classList.add("disabled-card");
+      
+        firstCard = "";
+        secondCard = "";
+
+        checkEndGame();
+       
+    }else {
+        setTimeout(()=>{
+            firstCard.classList.remove("reveal-card");
+            secondCard.classList.remove("reveal-card");
+
+            firstCard = "";
+            secondCard = "";    
+
+        }, 500)
+    }
+    
 }
+
+
+
+const revealCard = ({ target }) => {
+
+      if (target.parentNode.className.includes('reveal-card')) {
+        return;
+      }
+    
+      if (firstCard === '') {
+    
+        target.parentNode.classList.add('reveal-card');
+        firstCard = target.parentNode;
+    
+      } else if (secondCard === '') {
+    
+        target.parentNode.classList.add('reveal-card');
+        secondCard = target.parentNode;
+    
+        checkCards();
+    
+      } 
+    }
+
+ 
+
+
 
 const createCard = (character)=>{
     const card = createElement("div", "card");

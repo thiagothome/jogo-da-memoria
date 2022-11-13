@@ -200,8 +200,11 @@ let secondCard = "";
 const checkEndGame = ()=>{
     const disabledCardsArray = document.querySelectorAll(".disabled-card");    
     console.log(disabledCardsArray.length)
-    if (disabledCardsArray.length === 18){
-        alert("Parabéns você venceu");
+    if (disabledCardsArray.length === 2){
+        clearInterval(this.loop);
+        setTimeout(()=>{
+            alert("Parabéns você venceu");
+        },.5)
     }
 }
 
@@ -301,11 +304,34 @@ const loadGame = ()=>{
     });
 }
 
+/** logica timer
+ * pegar o span do timer
+ * criar a funcão com loop onde a cada segundo será incrementado mais segundos
+ * pegar o tempo que já está no span que é 0 zero 
+ * converter para numero
+ * criar um set interval para o tempo
+ * iniciar o timer no onload
+ *parar o loop quando o usuario vencer
+ atribuir o timer ao this. this.loop = setInterval..
+ parar o loop quando o jogo acabar com clear interval
+ */
+
+
+ const startTimer = ()=>{
+    
+    this.loop = setInterval(()=>{
+        const timer = +spanTimer.innerHTML;
+        spanTimer.innerHTML = timer + 1;
+    },1000);
+ }
+
+
 window.onload = ()=> {
     //recuperar o valor do localStorage 
     // localStorage.getItem("valor do input")
     //colocar na tela 
     spanPlayer.innerHTML = localStorage.getItem("player");
+    startTimer();
     loadGame();
     
 }

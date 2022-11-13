@@ -177,13 +177,13 @@ const spanTimer = document.querySelector(".timer");
 const characters = [
     "beth",
     "jerry",
-    // "jessica",
-    // "meeseeks",
-    // "pessoa-passaro",
-    // "morty",
-    // "pickle-rick",
-    // "scroopy",
-    // "rick"
+    "jessica",
+    "meeseeks",
+    "pessoa-passaro",
+    "morty",
+    "pickle-rick",
+    "scroopy",
+    "rick"
 ]
 
 const createElement = (tag, classElement)=>{
@@ -200,11 +200,10 @@ let secondCard = "";
 const checkEndGame = ()=>{
     const disabledCardsArray = document.querySelectorAll(".disabled-card");    
     console.log(disabledCardsArray.length)
-    if (disabledCardsArray.length === 2){
+    if (disabledCardsArray.length === 18){
         clearInterval(this.loop);
-        setTimeout(()=>{
-            alert("Parabéns você venceu");
-        },.5)
+        alert("Parabéns você venceu");
+        
     }
 }
 

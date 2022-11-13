@@ -140,6 +140,7 @@
 
 const grid = document.querySelector(".grid");
 const spanPlayer = document.querySelector(".player");
+const spanTimer = document.querySelector(".timer");
 /**
  * criar um array guardando os nomes das imagens que vao no front da carta
  * criar uma funcao para percorrer um array 
@@ -176,13 +177,13 @@ const spanPlayer = document.querySelector(".player");
 const characters = [
     "beth",
     "jerry",
-    "jessica",
-    "meeseeks",
-    "pessoa-passaro",
-    "morty",
-    "pickle-rick",
-    "scroopy",
-    "rick"
+    // "jessica",
+    // "meeseeks",
+    // "pessoa-passaro",
+    // "morty",
+    // "pickle-rick",
+    // "scroopy",
+    // "rick"
 ]
 
 const createElement = (tag, classElement)=>{

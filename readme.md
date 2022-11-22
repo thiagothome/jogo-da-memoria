@@ -6,7 +6,7 @@
 Tabela de conteúdos
 =================
 <!--ts-->
-   * [Sobre](Sobre)
+   * [Sobre](#Sobre)
    * [Instalação](#instalacao)
    * [Tecnologias](#tecnologias)
 <!--te-->

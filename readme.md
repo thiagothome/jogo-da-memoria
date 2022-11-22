@@ -34,8 +34,8 @@ Após ser baixado aqui no GitHub, como o jogo é em JavaScript basta um navegado
 <br>
 
 # Autor
- <img style="clip-path: circle(40%);" src="https://avatars.githubusercontent.com/u/73028089?s=400&u=d514ff503e6e3455c7ef2fcffb23b78dd8150aa2&v=4">
+ <img style="border-radius: 100%;" src="https://avatars.githubusercontent.com/u/73028089?s=400&u=d514ff503e6e3455c7ef2fcffb23b78dd8150aa2&v=4">
 <br>
 
->## Thiago Thome
->### Subindo um degrau de cada vez <img style="width:30px" src="https://img.icons8.com/color/512/flex-biceps.png">
+## Thiago Thome
+### Subindo um degrau de cada vez <img style="width:30px" src="https://img.icons8.com/color/512/flex-biceps.png">
